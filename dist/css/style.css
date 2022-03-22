@@ -35,9 +35,12 @@ li:hover{
     justify-content: space-between;
     margin: 0;
 }
-.up2 li{
+.up2 li {
     list-style: none;
     margin-right: 15px;
+}
+.up2 li a{
+    text-decoration: none;
 }
 .middle {
     width: 100%;
@@ -46,6 +49,11 @@ li:hover{
     display: flex;
     justify-content: space-between;
     color: white;
+}
+
+.middle1, h3{
+    text-align: center;
+    line-height: 60px;
 }
 .middle2 ul{
     display: flex;
@@ -80,7 +88,7 @@ li:hover{
     text-decoration: none;
       color: darkgray;
 }
-a:hover {
+.login a:hover {
     color: orange
 }
 
@@ -121,7 +129,7 @@ label, input{
 }
 
 .btn{
-    width: 70px;
+    width: 100px;
     height: 30px;
     background-color: orange;
     margin-top: 10px;
@@ -138,3 +146,13 @@ label, input{
 }
 
 
+/* HEADER 2 */
+.logout{
+    line-height: 60px;
+    margin-right: 60px;
+}
+
+.logout a{
+    text-decoration: none;
+    color: white;
+}

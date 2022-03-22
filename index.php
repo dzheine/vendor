@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
 
 </head>
 <body>
@@ -26,13 +26,15 @@
                 <li>Pricing</li>
                 <li>I am couple</li>
                 <li>Are you vendor?</li>
-                <li>login</li>
+                <li><a href="views/register.php">Register</a></li>
                 <li><i class="fa-solid fa-magnifying-glass"></i></li>
             </ul>
             </div>
         </div>
         <div class="middle">
-            <div class="middle1"><img src="dist/img/logo.svg" alt="logo" width="70px" height="70px"></div>
+            <div class="middle1">
+                <!-- <img src="dist/img/logo.svg" alt="logo" width="70px" height="70px"> -->
+            </div>
             <div class="middle2">
             <ul>
                 <li>HOME</li>
@@ -64,20 +66,20 @@
         <div class="formos">
             <div class="forma1">
                 <h2>Vendor Login</h2>
-                <form>
+                <form action="./scripts/login.php" method="POST">
                     <div class="form-group my-3">
                         <label for="exampleInputEmail1">E-mail* </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" name="email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password*</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
                     </div>
                     <input type="submit" class="btn" value= "LOGIN" >
                     <span class="end"><a href="#">Forgot Password?</a></span>
             </form>
             </div>
-            <div class="forma2">
+            <!-- <div class="forma2">
                 <h2>Couple Login</h2>
                 <form>
                     <div class="form-group my-3">
@@ -91,7 +93,7 @@
                     <input type="submit" class="btn" value= "LOGIN" >
                     <span class="end"><a href="#">Forgot Password?</a></span>
             </form>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
