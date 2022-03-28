@@ -6,6 +6,7 @@ if($_POST){
     $email=$_POST['email'];
     $password=$_POST['password'];
 }
+
   //issitraukiam userius is DB
 try{
     $sql="SELECT * from users WHERE email='$email'";
@@ -25,7 +26,8 @@ if($result){
        
         $_SESSION['username']=$result['first_name'];
         $_SESSION['userid']=$result['id'];
-                    header("Location: ../views/forum.php");
+       // var_dump($_SESSION['userid']);
+       header("Location: ../views/forum.php");
     } else {
         echo "Password is incorrect";
     }

@@ -8,7 +8,18 @@ include("../layout/header.php");
         <div class="col-md-8">
             <div class="card bg-light mb-8">
                 <div class="card-header">Sign Up</div>
+                <form action="../scripts/logout.php" method="POST">
+                    <input type="submit" value="logout">
+                </form>
                 <div class="card-body">
+                    <?php
+                    session_start();
+                    if(isset($_SESSION['errors'])){
+                        foreach($_SESSION['errors'] as $error){
+                            echo "<p>$error</p>";
+                        }
+                        $_SESSION['error']=[];
+                    } ?>
                    <form action="..\scripts\register.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="text" class="form-control my-3" placeholder="First Name" name="fname">

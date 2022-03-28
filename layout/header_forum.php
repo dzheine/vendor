@@ -1,3 +1,8 @@
+<?php  
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +24,10 @@
         <div class="middle">
             <div class="middle1">
                 <h3>Welcome to Forum</h3>
-
            </div>
             <div class="logout">
                 <a href="../scripts/logout.php">LogOut</a>
             </div>
         </div>
+        
 </div>
