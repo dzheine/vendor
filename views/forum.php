@@ -1,13 +1,11 @@
 <?php
-session_start();
 
+
+require_once("../db_connect.php");
+include("../layout/header_forum.php");
 if(isset($_SESSION['userid'])){
     $userid=$_SESSION['userid'];
 }
-// var_dump($userid);
-require_once("../db_connect.php");
-include("../layout/header_forum.php");
-
 try{
     $sql = "SELECT users.first_name, users.last_name, users.email, posts.text, posts.user_id, posts.created
     FROM users
@@ -50,7 +48,7 @@ try{
         <div class="col">
             <table class="users" >
                     <tr>
-                        <th class="bg-secondary text-white"><?php echo "This is your acccount, ".$name['first_name']?></th>
+                        <th class="bg-secondary text-white"><?php echo "You can manage account, ".$name['first_name']?></th>
                         <th class="bg-secondary text-white"></th>
                     </tr>
                     <?php 

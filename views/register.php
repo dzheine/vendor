@@ -20,16 +20,24 @@ include("../layout/header.php");
                         }
                         $_SESSION['errors']=[];
 
-                    } ?>
+                    } 
+                    $fname= $lname=$email="";
+
+                    if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email'])){
+                        $fname=$_SESSION['fname'];
+                        $lname=$_SESSION['lname'];
+                        $email=$_SESSION['email'];
+                    }
+        ?>
                    <form action="../scripts/register.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <input type="text" class="form-control my-3" placeholder="First Name" name="fname">
+                            <input type="text" class="form-control my-3" placeholder="First Name" name="fname" value="<?php echo $fname; ?>">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control  my-3" placeholder="Last Name" name="lname">
+                            <input type="text" class="form-control  my-3" placeholder="Last Name" name="lname" value="<?php echo $lname; ?>">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control  my-3" placeholder="Your@email.com" name="email">
+                            <input type="email" class="form-control  my-3" placeholder="Your@email.com" name="email" value="<?php echo $email; ?>">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control  my-3" placeholder="Password" name="password">

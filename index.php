@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,6 +65,26 @@
             <a href="#">Login place</a>
         </div>
     </div>
+    <?php
+    session_start();
+        if(isset($_SESSION['login_errors'])){
+            $errors=$_SESSION['login_errors'];
+            $_SESSION['login_errors']=[];
+            foreach($errors as $error){
+                echo "<p>$error</p>";
+            }
+        }
+        $locked = false;
+
+        // var_dump($_SESSION['login_count']);
+        if(isset($_SESSION['login_count'])){
+            if($_SESSION['login_count']===3){
+                $locked=true;
+            }
+        } else {
+            $_SESSION['login_count'] = 0;
+        }
+    ?>
     <div class="container2">
         <div class="formos">
             <div class="forma1">
@@ -79,21 +102,6 @@
                     <span class="end"><a href="#">Forgot Password?</a></span>
             </form>
             </div>
-            <!-- <div class="forma2">
-                <h2>Couple Login</h2>
-                <form>
-                    <div class="form-group my-3">
-                        <label for="exampleInputEmail1">E-mail* </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password*</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <input type="submit" class="btn" value= "LOGIN" >
-                    <span class="end"><a href="#">Forgot Password?</a></span>
-            </form>
-            </div> -->
         </div>
     </div>
 </body>

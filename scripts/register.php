@@ -13,16 +13,35 @@ if(!(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) 
     echo "Something went wrong, please contact system admin";
 }
 
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
+$_SESSION['fname']=$fname = $_POST['fname'];
+$_SESSION['lname']=$lname = $_POST['lname'];
+$_SESSION['email']=$email = $_POST['email'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirm'];
 
 if (($fname=="") || ($lname=="") || ($email=="") || ($password=="") || ($confirmPassword=="")) {
     array_push($_SESSION['errors'], "Please fill all fields!");          
 } 
-   
+
+try{
+    $sql="SELECT email FROM users";
+    $query=$conn->prepare($sql);
+    $query->execute();
+    $users=$query->fetchAll();
+} catch (PDOException $e){
+    echo "Select for users failed: ". $e->getMessage();
+}
+
+$email_exists=0;
+foreach( $users as $user){
+    if(array_search($email, $user)){
+        $email_exists=+1;
+    }
+}
+if($email_exists==1){
+    array_push($_SESSION['errors'], "Email already exists");
+}
+
 if($password!==$confirmPassword){
 array_push($_SESSION['errors'], "Passwords do not match");
 }

@@ -1,5 +1,6 @@
 <?php  
-
+session_start();
+$username=$_SESSION['username'];
 
 ?>
 
@@ -23,7 +24,7 @@
 <div class="container1">
         <div class="middle">
             <div class="middle1">
-                <h3>Welcome to Forum</h3>
+                <h3>Welcome to Forum, <?php echo $username ?></h3>
            </div>
             <div class="logout">
                 <a href="../scripts/logout.php">LogOut</a>
