@@ -27,7 +27,7 @@ if($password!==$confirmPassword){
 array_push($_SESSION['errors'], "Passwords do not match");
 }
 
-if(!empty($_SESSION['reg_errors'])){
+if(!empty($_SESSION['errors'])){
     header("Location: ../views/register.php");
     die;
 }

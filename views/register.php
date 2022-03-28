@@ -18,9 +18,10 @@ include("../layout/header.php");
                         foreach($_SESSION['errors'] as $error){
                             echo "<p>$error</p>";
                         }
-                        $_SESSION['error']=[];
+                        $_SESSION['errors']=[];
+
                     } ?>
-                   <form action="..\scripts\register.php" method="POST" enctype="multipart/form-data">
+                   <form action="../scripts/register.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="text" class="form-control my-3" placeholder="First Name" name="fname">
                         </div>
